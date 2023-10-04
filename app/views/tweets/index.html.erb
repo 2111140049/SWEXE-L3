@@ -11,7 +11,7 @@
         <%=link_to '編集', "/tweets/#{e.id}/edit" %>
     </p>
 <% end %>
-
-<button onclick="tweets/new" type="button">ツイートする</button>
-
+<form action="tweets/new">
+    <button type="submit">ツイートする</button>
+</form>
 <%= link_to 'ツイートする', 'tweets/new' %>

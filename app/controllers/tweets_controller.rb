@@ -22,9 +22,11 @@ class TweetsController < ApplicationController
     end
     def show
       @tweet = Tweet.find(params[:id])
+      logger.debug("show")
     end
     def edit
       @tweet = Tweet.find(params[:id])
+      logger.debug("edit")
     end
     def update
       @tweet = Tweet.find(params[:id])

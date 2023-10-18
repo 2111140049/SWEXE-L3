@@ -1,18 +1,80 @@
-<link href="index1.css" class="btn_t" rel="stylesheet">
-<% if flash[:notice] %>
-    <%= flash[:notice] %>
-<% end %>
+<%= stylesheet_link_tag "index1", :media => "all" %>
 
-<% @tweets.each do |e| %>
-    <p>
-        <%= e.message %>
-        <%= ((Time.current - e.tdate)/60).to_i %>分
-        <%=link_to '削除', "/tweets/#{e.id}", data: { turbo_method: :delete } %>
-        <%=link_to '表示', "/tweets/#{e.id}" %>
-        <%=link_to '編集', "/tweets/#{e.id}/edit" %>
-    </p>
-<% end %>
-<form action="tweets/new">
-    <button type="submit">ツイートする</button>
-</form>
-<%= link_to 'ツイートする', 'tweets/new' %>
+<body>
+    <p1>
+        <ul>
+        <y2>
+            <%= image_tag 't1.JPG'%>
+            <%= link_to ' ホーム ', 'tweets/index' %>
+        </y2>
+        <ul></ul>
+        <y2>
+            <%= image_tag 't3.JPG'%>
+            <%= link_to ' 話題を検索', 'tweets/new' %>
+        </y2>
+        <ul></ul>
+        <y2>
+            <%= image_tag 't4.JPG'%>
+            <%= link_to ' 通知', 'tweets/new' %>
+        </y2>
+        <ul></ul>
+        <y2>
+            <%= image_tag 't5.JPG'%>
+            <%= link_to ' メッセージ   ', 'tweets/new' %>
+        </y2>
+        <ul></ul>
+        <y2>
+             <%= image_tag 't9.JPG'%>
+            <%= link_to ' ブックマーク', 'tweets/new' %>
+        </y2>
+    　　<ul></ul><y2><%= image_tag 't6.JPG'%><%= link_to ' リスト', 'tweets/new' %></y2>
+        <ul></ul>
+        <y2>
+            <%= image_tag 't7.JPG'%>
+            <%= link_to ' プロフィール', 'tweets/new' %>
+        </y2>
+        <ul></ul>
+        <y2>
+             <%= image_tag 't8.JPG'%>
+            <%= link_to ' もっと見る', 'tweets/show' %>
+        </y2>
+        <ul></ul>
+        <form action="tweets/new">
+            <button type="submit">ツイートする</button>
+        </form>
+        </ul>
+    </p1>
+    
+    <p2>
+        <p2_top>
+            <y1>ツイート</y1>
+            <y1>ツイートと返信</y1>
+            <y1>メディア</y1>
+            <y1>いいね！</y1>
+        </p2_top>
+    
+    <p3>    
+        <% if flash[:notice] %>
+            <%= flash[:notice] %>
+        <% end %>
+        
+        <% @tweets.each do |e| %>
+        <ul></ul>
+            <k1>
+            <p>
+                <ul></ul>
+                <%= image_tag 't2.jpg'%>-------
+                <%= ((Time.current - e.tdate)/60).to_i %>分
+                <ul></ul>
+                <%= e.message %>
+                <ul></ul>
+                <%=link_to '削除', "/tweets/#{e.id}", data: { turbo_method: :delete } %>
+                <%=link_to '表示', "/tweets/#{e.id}" %>
+                <%=link_to '編集', "/tweets/#{e.id}/edit" %>
+            </p>
+            </k1>
+        <% end %>
+    </p3>
+    </p2>
+</body>
+
